@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <title>My First Django App</title>
+            <link rel="stylesheet" href="{% static 'C:\Colta\MSIB\Belajar Python\my django\first_project\static\images\css\my_style.css ' %}">
+        <head>
+        <body>
+            <h1>Hello! This is index.html</h1>
+            <h2>Mahasiswa Pendidikan Biologi</h2>
+
+            <p> This is the picture of Biology</p>
+            <img src="{% static 'images/Biologi.png'%}" alt="Biology" width= 100>
+
+            <h3> This is the data record:</h3>
+            <div class="Djangotwo">
+                {%if access_records%}
+                    <table>
+                        <thead>
+                            <th>Site Name</th>
+                            <th>Date Accessed</th>
+                        </thead>
+                        {% for acc in access_records %}
+                            <tr>
+                                <td> {{acc.name}} </td>
+                                <td> {{acc.date}} </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>No ACCESS RECORDS FOUND</p>
+                {% endif %}
+
+            </div>
+
+
+        </body>
+    </html>
